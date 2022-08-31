@@ -28,7 +28,6 @@ set pastetoggle=<F12>
 "" TODO? look into spell checking
 ""
 set foldmethod=indent
-
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -43,3 +42,5 @@ augroup user_config
   autocmd!
   autocmd BufWritePost init.vim source <afile>
 augroup end
+
+lua require("lua.plugins")
