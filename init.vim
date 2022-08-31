@@ -54,4 +54,4 @@ augroup user_config
   autocmd BufWritePost init.vim source <afile>
 augroup end
 
-lua require("lua.plugins")
+lua require("plugins")
