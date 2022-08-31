@@ -36,6 +36,7 @@ set pastetoggle=<F12>
 "" TODO: set up code block folding
 "" TODO: check out select mode
 "" TODO? look into spell checking
+set number
 
 
 set foldmethod=indent
