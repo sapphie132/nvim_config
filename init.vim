@@ -53,6 +53,7 @@ endif
 nnoremap <C-P> :FzfLua files<CR>
 
 set foldmethod=indent
+set foldlevelstart=99 " Make sure nothing is folded when opening a file
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
