@@ -5,12 +5,38 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+require 'plugins.config.treesitter'
+
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'preservim/nerdtree'
   use 'ibhagwan/fzf-lua'
   use 'lambdalisue/suda.vim'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/playground'
+  use 'romgrk/nvim-treesitter-context'
+  use 'sheerun/vim-polyglot'
+
+  -- better folding for python
+  use 'tmhedberg/SimpylFold'
+
+
+  use 'preservim/nerdtree'
+  -- shows git file status in NERDTree
+  use { 'Xuyuanp/nerdtree-git-plugin' }
+
+  -- colored file type icons in NERDTree
+  use { 'tiagofumo/vim-nerdtree-syntax-highlight' }
+
+  -- Airline plugins {{{1
+  -- pretty, segmented and configurable status line
+  use 'vim-airline/vim-airline'
+
+  -- adds highlighting of only the local scope
+  use { 'folke/twilight.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
+
+  -- toggle line commenting with a key map
+  use 'tpope/vim-commentary'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

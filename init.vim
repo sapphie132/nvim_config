@@ -52,7 +52,9 @@ endif
 
 nnoremap <C-P> :FzfLua files<CR>
 
-set foldmethod=indent
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set foldlevelstart=99 " Make sure nothing is folded when opening a file
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
