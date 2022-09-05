@@ -39,6 +39,19 @@ set pastetoggle=<F12>
 set number
 
 
+" Disable the typescript lang, because the indenting of comments is atrocious.
+" And it breaks gq.
+let g:polyglot_disabled = ['typescript']
+
+lua require("plugins")
+
+" Switch on syntax highlighting.
+if has('nvim') || has('syntax')
+  syntax enable
+endif
+
+nnoremap <C-P> :FzfLua files<CR>
+
 set foldmethod=indent
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -55,4 +68,3 @@ augroup user_config
   autocmd BufWritePost init.vim source <afile>
 augroup end
 
-lua require("plugins")

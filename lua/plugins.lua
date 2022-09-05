@@ -9,6 +9,8 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'preservim/nerdtree'
+  use 'ibhagwan/fzf-lua'
+  use 'lambdalisue/suda.vim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
