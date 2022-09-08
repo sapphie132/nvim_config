@@ -6,6 +6,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require 'plugins.config.treesitter'
+require 'plugins.config.lspconfig'
 
 return require('packer').startup(function()
   -- Packer can manage itself
@@ -37,6 +38,8 @@ return require('packer').startup(function()
 
   -- toggle line commenting with a key map
   use 'tpope/vim-commentary'
+
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
