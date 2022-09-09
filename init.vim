@@ -29,7 +29,7 @@ set briopt+=sbr   " Show line breaks better
 set showbreak=>   " Ditto
 
 set matchpairs+=<:> " Add the <> pair to bracket matching
-set mouse=v " Use the mouse in visual mode
+set mouse=a " Enable mouse
 "" TODO: add visual indicator for paste mode
 "" TODO: look into status line
 set pastetoggle=<F12>
@@ -56,6 +56,7 @@ inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
 let g:nuake_position = 'top'
+let g:nuake_size = 0.5
 
 
 set foldmethod=expr
