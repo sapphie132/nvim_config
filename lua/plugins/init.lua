@@ -18,6 +18,7 @@ return require('packer').startup(function()
 
   use 'sharkdp/fd'
   use 'nvim-tree/nvim-web-devicons'
+  -- use 'ryanoasis/vim-devicons'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -35,6 +36,9 @@ return require('packer').startup(function()
   use 'preservim/nerdtree'
   -- shows git file status in NERDTree
   use { 'Xuyuanp/nerdtree-git-plugin' }
+  use 'scrooloose/nerdtree-project-plugin'
+  use 'PhilRunninger/nerdtree-buffer-ops'
+  use 'PhilRunninger/nerdtree-visual-selection'
 
   -- colored file type icons in NERDTree
   use { 'tiagofumo/vim-nerdtree-syntax-highlight' }

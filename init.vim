@@ -48,6 +48,16 @@ augroup user_config
   autocmd BufWritePost init.vim source <afile>
 augroup end
 
+augroup nerdtree
+  autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+  " Start NERDTree when Vim starts with a directory argument.
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+      \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+  " Close the tab if NERDTree is the only window remaining in it.
+  autocmd BufEnter * if tabpagenr('$') > 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+augroup end
+
 " Disable the typescript lang, because the indenting of comments is atrocious.
 " And it breaks gq.
 let g:polyglot_disabled = ['typescript']
@@ -68,6 +78,10 @@ tnoremap <F4> <C-\><C-n>:Nuake<CR>
 let g:nuake_position = 'top'
 let g:nuake_size = 0.5
 let g:start_insert = 1
+let g:NERDTreeNaturalSort = 1
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 2
 
 
 set foldmethod=expr
