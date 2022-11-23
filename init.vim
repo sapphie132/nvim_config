@@ -38,35 +38,6 @@ set pastetoggle=<F12>
 "" TODO? look into spell checking
 set number
 
-
-" Disable the typescript lang, because the indenting of comments is atrocious.
-" And it breaks gq.
-let g:polyglot_disabled = ['typescript']
-
-lua require("plugins")
-
-" Switch on syntax highlighting.
-if has('nvim') || has('syntax')
-  syntax enable
-endif
-
-nnoremap <C-P> :FzfLua files<CR>
-nnoremap <F4> :Nuake<CR>
-inoremap <F4> <C-\><C-n>:Nuake<CR>
-tnoremap <F4> <C-\><C-n>:Nuake<CR>
-
-let g:nuake_position = 'top'
-let g:nuake_size = 0.5
-
-
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set foldlevelstart=99 " Make sure nothing is folded when opening a file
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
 augroup packer_user_config
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile
@@ -76,4 +47,41 @@ augroup user_config
   autocmd!
   autocmd BufWritePost init.vim source <afile>
 augroup end
+
+" Disable the typescript lang, because the indenting of comments is atrocious.
+" And it breaks gq.
+let g:polyglot_disabled = ['typescript']
+
+lua require("plugins")
+lua require("plugins.config")
+
+" Switch on syntax highlighting.
+if has('nvim') || has('syntax')
+  syntax enable
+endif
+
+nnoremap <C-P> :Telescope find_files<CR>
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
+let g:nuake_position = 'top'
+let g:nuake_size = 0.5
+let g:start_insert = 1
+
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=99 " Make sure nothing is folded when opening a file
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+if has("win32")
+  set shell=C:/cygwin64/bin/bash.exe
+  set shellcmdflag+=-i
+  set shellcmdflag+=--login
+endif
 
