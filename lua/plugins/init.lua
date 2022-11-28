@@ -36,12 +36,12 @@ return require('packer').startup(function()
   use 'preservim/nerdtree'
   -- shows git file status in NERDTree
   use { 'Xuyuanp/nerdtree-git-plugin' }
-  use 'scrooloose/nerdtree-project-plugin'
+  -- use 'scrooloose/nerdtree-project-plugin'
   use 'PhilRunninger/nerdtree-buffer-ops'
   use 'PhilRunninger/nerdtree-visual-selection'
 
   -- colored file type icons in NERDTree
-  use { 'tiagofumo/vim-nerdtree-syntax-highlight' }
+  -- use { 'tiagofumo/vim-nerdtree-syntax-highlight' }
 
   -- Airline plugins {{{1
   -- pretty, segmented and configurable status line
@@ -56,6 +56,10 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
   use 'Lenovsky/nuake' -- Quake-style terminal
+
+  use 'EdenEast/nightfox.nvim'
+  use 'jacoborus/tender.vim'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
