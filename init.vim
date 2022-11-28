@@ -40,7 +40,7 @@ set number
 
 augroup packer_user_config
   autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  autocmd BufWritePost *plugins/init.lua* source <afile> | PackerCompile
 augroup end
 
 augroup user_config
@@ -74,6 +74,9 @@ nnoremap <C-P> :Telescope find_files<CR>
 nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
+nnoremap <C-/> :Commentary<CR>
+vnoremap <C-/> :Commentary<CR>
+inoremap <C-/> <C-[> :Commentary<CR>
 
 let g:nuake_position = 'top'
 let g:nuake_size = 0.5
@@ -94,8 +97,9 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 if has("win32")
-  set shell=C:/cygwin64/bin/bash.exe
-  set shellcmdflag+=-i
-  set shellcmdflag+=--login
+  set shell=C:/cygwin64/bin/zsh.exe
 endif
 
+" Make sure the colourscheme is set after any potential configuration
+set background=light
+colorscheme gruvbox
