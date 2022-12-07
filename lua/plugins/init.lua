@@ -32,16 +32,13 @@ return require('packer').startup(function()
   -- better folding for python
   use 'tmhedberg/SimpylFold'
 
+  -- Diff
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use 'preservim/nerdtree'
   -- shows git file status in NERDTree
   use { 'Xuyuanp/nerdtree-git-plugin' }
-  -- use 'scrooloose/nerdtree-project-plugin'
-  use 'PhilRunninger/nerdtree-buffer-ops'
   use 'PhilRunninger/nerdtree-visual-selection'
-
-  -- colored file type icons in NERDTree
-  -- use { 'tiagofumo/vim-nerdtree-syntax-highlight' }
 
   -- Airline plugins {{{1
   -- pretty, segmented and configurable status line
