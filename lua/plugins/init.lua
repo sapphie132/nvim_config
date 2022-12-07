@@ -29,6 +29,7 @@ return require('packer').startup(function()
   use 'romgrk/nvim-treesitter-context'
   use 'sheerun/vim-polyglot'
 
+
   -- better folding for python
   use 'tmhedberg/SimpylFold'
 
@@ -51,7 +52,11 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'tamago324/nlsp-settings.nvim'
 
+  use 'williamboman/nvim-lsp-installer'
+
+  use 'rcarriga/nvim-notify'
   use 'Lenovsky/nuake' -- Quake-style terminal
 
   use 'EdenEast/nightfox.nvim'
