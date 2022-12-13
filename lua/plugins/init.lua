@@ -47,6 +47,7 @@ return require('packer').startup(function()
 
   -- adds highlighting of only the local scope
   use { 'folke/twilight.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
+  use { 'p00f/nvim-ts-rainbow', requires = { 'nvim-treesitter/nvim-treesitter' } }
 
   -- toggle line commenting with a key map
   use 'tpope/vim-commentary'
