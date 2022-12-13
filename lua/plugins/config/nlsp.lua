@@ -2,13 +2,13 @@ local lsp_installer = require'nvim-lsp-installer'
 local lspconfig = require'lspconfig'
 local nlspsettings = require'nlspsettings'
 
-nlspsettings.setup({
+nlspsettings.setup{
   config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
   local_settings_dir = ".nlsp-settings",
   local_settings_root_markers_fallback = { '.git' },
-  append_default_schemas = true
+  append_default_schemas = true,
   loader = 'json'
-})
+}
 
 function on_attach(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
