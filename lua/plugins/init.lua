@@ -10,6 +10,8 @@ local ensure_packer = function()
   return false
 end
 
+require('remap')
+
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function()
@@ -18,7 +20,6 @@ return require('packer').startup(function()
 
   use 'sharkdp/fd'
   use 'nvim-tree/nvim-web-devicons'
-  -- use 'ryanoasis/vim-devicons'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -53,7 +54,6 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  use 'tamago324/nlsp-settings.nvim'
 
   use 'williamboman/nvim-lsp-installer'
 
@@ -63,6 +63,11 @@ return require('packer').startup(function()
   use 'EdenEast/nightfox.nvim'
   use 'jacoborus/tender.vim'
   use 'ellisonleao/gruvbox.nvim'
+
+  -- harpoon
+  use 'ThePrimeagen/harpoon'
+
+  use 'mbbill/undotree'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

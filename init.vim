@@ -4,10 +4,10 @@ set autowriteall  " write on many different occasions
 " Indentation
 set autoindent    " Auto-indent new lines
 set expandtab     " Use spaces instead of tabs
-set shiftwidth=2  " Number of auto-indent spaces
+set shiftwidth=4  " Number of auto-indent spaces
 set smartindent   " Enable smart-indent
 set smarttab      " Enable smart-tabs
-set softtabstop=2 " Number of spaces per Tab
+set softtabstop=4 " Number of spaces per Tab
 
 " Search
 set hlsearch      " Highlight all search results
@@ -70,7 +70,6 @@ if has('nvim') || has('syntax')
   syntax enable
 endif
 
-nnoremap <C-P> :Telescope find_files<CR>
 nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
@@ -89,11 +88,10 @@ let g:NERDTreeChDirMode = 2
 
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevelstart=99 " Make sure nothing is folded when opening a file
+set nofoldenable
 
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 if has("win32")
