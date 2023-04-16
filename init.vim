@@ -64,6 +64,7 @@ let g:polyglot_disabled = ['typescript']
 
 lua require("plugins")
 lua require("plugins.config")
+lua require("remap")
 
 " Switch on syntax highlighting.
 if has('nvim') || has('syntax')
@@ -91,8 +92,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable
 
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-l> :NERDTreeToggle<CR>
 
 if has("win32")
   set shell=C:/cygwin64/bin/zsh.exe

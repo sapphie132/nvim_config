@@ -10,8 +10,6 @@ local ensure_packer = function()
   return false
 end
 
-require('remap')
-
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function()
@@ -27,12 +25,8 @@ return require('packer').startup(function()
   use 'lambdalisue/suda.vim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
+  -- Shows the current context as you scroll down
   use 'romgrk/nvim-treesitter-context'
-  use 'sheerun/vim-polyglot'
-
-
-  -- better folding for python
-  use 'tmhedberg/SimpylFold'
 
   -- Diff
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -42,7 +36,8 @@ return require('packer').startup(function()
   use { 'Xuyuanp/nerdtree-git-plugin' }
   use 'PhilRunninger/nerdtree-visual-selection'
 
-  -- Airline plugins {{{1
+  use 'tpope/vim-fugitive'
+
   -- pretty, segmented and configurable status line
   use 'vim-airline/vim-airline'
 
@@ -64,7 +59,7 @@ return require('packer').startup(function()
   use 'jacoborus/tender.vim'
   use 'ellisonleao/gruvbox.nvim'
 
-  -- harpoon
+  -- harpoon (navigation)
   use 'ThePrimeagen/harpoon'
 
   use 'mbbill/undotree'
