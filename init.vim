@@ -62,9 +62,9 @@ augroup end
 " And it breaks gq.
 let g:polyglot_disabled = ['typescript']
 
+lua require("remap")
 lua require("plugins")
 lua require("plugins.config")
-lua require("remap")
 
 " Switch on syntax highlighting.
 if has('nvim') || has('syntax')
