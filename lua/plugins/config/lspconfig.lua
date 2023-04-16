@@ -1,11 +1,12 @@
-lspconfig = require 'lspconfig'
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+local lsp = require('lsp-zero')
+lsp.preset("recommended")
+
+lsp.ensure_installed({
+    'rust_analyzer',
+    'tsserver',
+    'lua_ls',
+})
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -33,17 +34,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+lsp.on_attach(on_attach)
 
-lspconfig.jedi_language_server.setup{
-  on_attach = on_attach,
-  lsp_flags = lsp_flags,
-}
-
-lspconfig.tsserver.setup{
-  on_attach = on_attach,
-  lsp_flags = lsp_flags,
-}
+lsp.setup()
