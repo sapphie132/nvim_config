@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero')
+local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
     'rust_analyzer',
